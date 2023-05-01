@@ -15,6 +15,34 @@ function removeListenerButton() {
 }
 
 //Basic logic:
+//Функция показа модального окна с ошибкой
+function modalAlertError(error) {
+        const parentElement = document.querySelector('body');
+        const modalContainer = document.createElement('div');
+        const modalContent = document.createElement('div');
+        const modalClose = document.createElement('span');
+        const modalText = document.createElement('p');
+        modalContainer.className = 'modal';
+        modalContent.className = 'modal__content';
+        modalClose.className = 'modal__close-btn';
+        modalText.className = 'modal__text';
+        modalClose.innerHTML = '&times;';
+        modalText.innerHTML = `${error}`;
+        modalContainer.append(modalContent);
+        modalContent.append(modalClose);
+        modalContent.append(modalText);
+        parentElement.append(modalContainer);
+        modalClose.addEventListener('click', removeModalError);
+}
+
+//Функция закрытию модального окна с ошибкой
+function removeModalError() {
+    const modalContainer = document.querySelector('.modal');
+    const modalClose = document.querySelector('.modal__close-btn');
+    modalClose.removeEventListener('click', removeModalError);
+    modalContainer.remove();
+}
+
 //Функция обновления изменений в карточке пользователя в массиве users:
 function updateUserInformation(
 	userId,
@@ -385,7 +413,7 @@ async function getUsers() {
 		// console.log(data);
 		return data;
 	} catch (error) {
-		alert(error);
+		modalAlertError(error);
 	}
 }
 
@@ -400,7 +428,7 @@ async function getComments() {
 		// console.log(data);
 		return data;
 	} catch (error) {
-		alert(error);
+		modalAlertError(error);
 	}
 }
 
@@ -463,7 +491,7 @@ async function saveChangesUser(
 			throw new Error('Failed to connect width the server! Please try later.'); //Ошибка если ответ сервера отрицательный
 		}
 	} catch (error) {
-		alert(error);
+		modalAlertError(error);
 	}
 }
 
