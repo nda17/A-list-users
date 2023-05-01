@@ -53,6 +53,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 button {
@@ -219,6 +220,53 @@ label {
     color: grey
 }
 
+.modal {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .9;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.modal__content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    min-height: 20%;
+}
+
+.modal__close-btn {
+    color: #aaa;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.modal__text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 22px;
+    height: 100%;
+}
+
+.modal__close-btn:hover,
+.modal__close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
 
