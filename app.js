@@ -15,7 +15,7 @@ function removeListenerButton() {
 }
 
 //Basic logic:
-//Функция показа модального окна с ошибкой
+//Функция показа модального окна с ошибкой:
 function modalAlertError(error) {
         const parentElement = document.querySelector('body');
         const modalContainer = document.createElement('div');
@@ -35,7 +35,7 @@ function modalAlertError(error) {
         modalClose.addEventListener('click', removeModalError);
 }
 
-//Функция закрытию модального окна с ошибкой
+//Функция закрытию модального окна с ошибкой:
 function removeModalError() {
     const modalContainer = document.querySelector('.modal');
     const modalClose = document.querySelector('.modal__close-btn');
@@ -90,7 +90,7 @@ function userSelectDefault() {
 	userSelect.options[0].selected = true;
 }
 
-//Функция удаления пользователя из HTML разметки после сохранения изменений на сервере
+//Функция удаления пользователя из HTML разметки после сохранения изменений на сервере:
 function deleteUserHtml(userId) {
 	users = users.filter(user => user.id !== Number(userId));
 	hideUser();
@@ -391,7 +391,7 @@ function handleClose() {
 	userSelectDefault();
 }
 
-//Функция обработки клика по выбранному пользователю
+//Функция обработки клика по выбранному пользователю:
 function handleActiveUser(event) {
 	const target = Number(event.target.value);
 	if (target) {
@@ -402,7 +402,7 @@ function handleActiveUser(event) {
 }
 
 //Async logic:
-//Запрос всех пользователей
+//Запрос всех пользователей:
 async function getUsers() {
 	try {
 		const response = await fetch(
@@ -417,7 +417,7 @@ async function getUsers() {
 	}
 }
 
-//Запрос всех комментариев
+//Запрос всех комментариев:
 async function getComments() {
 	try {
 		const response = await fetch(
@@ -432,7 +432,7 @@ async function getComments() {
 	}
 }
 
-//Изменение данных в карточке пользователя
+//Изменение данных в карточке пользователя:
 async function saveChangesUser(
 	userId,
 	name,
@@ -495,7 +495,7 @@ async function saveChangesUser(
 	}
 }
 
-//Удаление карточки пользователя
+//Удаление карточки пользователя:
 async function deleteUser(userId) {
 	try {
 		const response = await fetch(
