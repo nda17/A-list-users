@@ -1,15 +1,16 @@
-# A list users
+# «A list users»
 
-## Требования к проекту (бизнес-логика):
-
-1. По нажатию на кнопку запроса списка пользователей, запросить данные по пользователям и комментариям с сервера, если ответ положительный по обоим запросам, отрисовывать список пользователей на странице. 
-2. Возможность редактировать данные пользователей, с отправкой запроса с изменениями на сервер.
-3. Возможность удалять пользователя из списка, с отправкой запроса с изменениями на сервер.
+## Application functionality:
+  - Request from the server for a list of users and user data. If the response from the server is positive, render the list of users on the page 
+  - Editing and deleting user data, saving changes on the server
 
 ## UI: 
-  1. Header с названием.
-  2. Кнопка запроса данных.
-  3. Форма: select со списком пользователей.
-  4. Footer с информацией.
-  5. Блок с информацией о пользователе, кнопками back, edit, delete.
-  6. Форма редактирования данных пользователя с кнопками clear, back, save.
+  - Header with title
+  - Request data button
+  - Form: drop-down list with a list of users
+  - Footer with information
+  - Block with information about the user, buttons back, change, delete
+  - Form for editing user data with buttons for clearing, returning, saving
+
+## Deployed:
+[Watch here](https://nda17.github.io/A-list-users/)
