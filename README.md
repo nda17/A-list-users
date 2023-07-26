@@ -1,4 +1,4 @@
-# «A list users»
+# «A list users app»
 
 ## Application functionality:
   - Request from the server for a list of users and user data. If the response from the server is positive, render the list of users on the page 
