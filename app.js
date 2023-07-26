@@ -115,8 +115,8 @@ function hideUserInformation() {
 //Функция cкрытия кнопки запроса пользователей:
 function hideButton() {
 	getUsersButton.style.position = 'absolute';
-	getUsersButton.style.top = '-100px';
-	getUsersButton.style.transition = 'all ease 1.5s';
+	getUsersButton.style.opacity = '0';
+	getUsersButton.style.transition = 'all ease 1.2s';
 	setTimeout((repeat = () => (getUsersButton.style.display = 'none')), 1500);
 	setTimeout(createButtonAddNewUser, 1100);
 }
@@ -409,8 +409,6 @@ async function getUsers() {
 			'https://jsonplaceholder.typicode.com/users?_limit=10'
 		);
 		const data = response.json();
-		// const data = await response.json();
-		// console.log(data);
 		return data;
 	} catch (error) {
 		modalAlertError(error);
@@ -471,8 +469,6 @@ async function saveChangesUser(
 			}
 		);
 
-		// const data = await response.json();
-		// console.log(data);
 		if (response.ok) {
 			updateUserInformation(
 				userId,
